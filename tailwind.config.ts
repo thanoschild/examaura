@@ -14,5 +14,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('preline/plugin')
+  ],
 } satisfies Config;
