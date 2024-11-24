@@ -1,9 +1,47 @@
+'use client'
+
 import Header from "@/app/components/header/header";
-import React from "react";
+import { signIn } from "next-auth/react";
+import Link from "next/link";
+import React, { useState } from "react";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const Login = (props: Props) => {
+  const router = useRouter();
+  const [form, setForm] = useState({
+    email: "",
+    password: ""
+  })
+  const [pending, setPending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+     e.preventDefault();
+     setPending(true);
+
+     try {
+      const res = await signIn("credentials", {
+        redirect: false,
+        email: form.email,  
+        password: form.password,
+      });
+  
+      if (res?.error) {
+        toast.error(res.error);
+      } else if (res?.ok) {
+        router.push('/'); 
+        toast.success("login successfully")
+      }
+    } catch (error) {
+      console.error('Sign in error:', error);
+      toast.error('Something went wrong!');
+    } finally {
+      setPending(false);
+    }
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -16,12 +54,12 @@ const Login = (props: Props) => {
               </h1>
               <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
                 Don't have an account yet?
-                <a
+                <Link
                   className="text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                  href="../examples/html/signup.html"
+                  href="/auth/sign-up"
                 >
                   Sign up here
-                </a>
+                </Link>
               </p>
             </div>
             <div className="mt-5">
@@ -55,11 +93,18 @@ const Login = (props: Props) => {
                 </svg>
                 Sign in with Google
               </button>
+              <button
+                type="button"
+                className="w-full mt-3 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              >
+                <svg width={20} height={20} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24m3.163 21.783h-.093a.5.5 0 0 1-.382-.14.5.5 0 0 1-.14-.372v-1.406q.01-.701.01-1.416a3.7 3.7 0 0 0-.151-1.028 1.83 1.83 0 0 0-.542-.875 8 8 0 0 0 2.038-.471 4.05 4.05 0 0 0 1.466-.964c.407-.427.71-.943.885-1.506a6.8 6.8 0 0 0 .3-2.13 4.1 4.1 0 0 0-.26-1.476 3.9 3.9 0 0 0-.795-1.284 2.8 2.8 0 0 0 .162-.582q.05-.3.05-.604 0-.392-.09-.773a5 5 0 0 0-.221-.763.3.3 0 0 0-.111-.02h-.11q-.346.004-.674.111a5 5 0 0 0-.703.26 7 7 0 0 0-.661.343q-.322.191-.573.362a9.6 9.6 0 0 0-5.143 0 14 14 0 0 0-.572-.362 6 6 0 0 0-.672-.342 4.5 4.5 0 0 0-.705-.261 2.2 2.2 0 0 0-.662-.111h-.11a.3.3 0 0 0-.11.02 6 6 0 0 0-.23.763q-.08.382-.081.773 0 .304.051.604t.16.582A3.9 3.9 0 0 0 5.702 10a4.1 4.1 0 0 0-.263 1.476 6.9 6.9 0 0 0 .292 2.12c.181.563.483 1.08.884 1.516.415.422.915.75 1.466.964.653.25 1.337.41 2.033.476a1.8 1.8 0 0 0-.452.633 3 3 0 0 0-.2.744 2.75 2.75 0 0 1-1.175.27 1.8 1.8 0 0 1-1.065-.3 2.9 2.9 0 0 1-.752-.824 3 3 0 0 0-.292-.382 2.7 2.7 0 0 0-.372-.343 1.8 1.8 0 0 0-.432-.24 1.2 1.2 0 0 0-.481-.101q-.06.002-.12.01a.7.7 0 0 0-.162.02.4.4 0 0 0-.13.06.12.12 0 0 0-.06.1.33.33 0 0 0 .14.242q.14.111.232.171l.03.021q.2.155.382.333.169.148.3.33.136.178.231.381.11.2.231.463c.188.474.522.875.954 1.145.453.243.961.364 1.476.351q.262 0 .522-.03.258-.041.515-.091v1.743a.5.5 0 0 1-.533.521h-.062a10.286 10.286 0 1 1 6.324 0z" /></svg>
+                Sign in with Github
+              </button>
               <div className="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600">
                 Or
               </div>
               {/* Form */}
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="grid gap-y-4">
                   {/* Form Group */}
                   <div>
@@ -77,6 +122,9 @@ const Login = (props: Props) => {
                         className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                         required
                         aria-describedby="email-error"
+                        disabled={pending}
+                        value={form.email}
+                        onChange={(e) => setForm({...form, email:e.target.value})}
                       />
                       <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                         <svg
@@ -111,7 +159,7 @@ const Login = (props: Props) => {
                       </label>
                       <a
                         className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                        href="../examples/html/recover-account.html"
+                        href="#"
                       >
                         Forgot password?
                       </a>
@@ -124,6 +172,9 @@ const Login = (props: Props) => {
                         className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                         required
                         aria-describedby="password-error"
+                        disabled={pending}
+                        value={form.password}
+                        onChange={(e) => setForm({...form, password:e.target.value})}
                       />
                       <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                         <svg

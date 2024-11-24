@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^2.4.3",
     "mysql2": "^3.11.4",
     "next": "15.0.3",
-    "next-auth": "^5.0.0-beta.25",
+    "next-auth": "^4.24.10",
     "preline": "^2.5.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "save-dev": "^0.0.1-security"
   },
   "devDependencies": {
     "@types/node": "^20",
