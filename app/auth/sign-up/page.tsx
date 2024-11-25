@@ -5,6 +5,7 @@ import Header from "@/app/components/header/header";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 type Props = {};
 
 const SignUp = (props: Props) => {
@@ -27,15 +28,23 @@ const SignUp = (props: Props) => {
       body: JSON.stringify(form),
     });
     const data = await res.json();
-    console.log("status: ", res.ok)
+    console.log("res code: ", res.status)
     if (res.status === 201) {
       setPending(false);
       toast.success(data.message);
       router.push("/auth/sign-in");
     } else {
-      toast.error(data.message)
+      toast.error(data.message);
       setPending(false);
     } 
+  };
+
+  const handleProvider = (
+    event: React.MouseEvent<HTMLButtonElement>,
+    value: "github" | "google"
+  ) => {
+    event.preventDefault();
+    signIn(value, { callbackUrl: "/" });
   };
 
   return (
@@ -91,6 +100,7 @@ const SignUp = (props: Props) => {
               </button>
               <button
                 type="button"
+                onClick={(e) => handleProvider(e, "github")}
                 className="w-full mt-3 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
               >
                 <svg

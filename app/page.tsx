@@ -29,7 +29,7 @@ export default async function Home() {
         {users && users.length > 0 ? (
           <ul>
             {users.map((user: any) => (
-              <li key={user.uid}>{user.uname}</li>
+              <li key={user.uid}>{user.uemail}</li>
             ))}
           </ul>
         ) : (
