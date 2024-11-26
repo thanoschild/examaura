@@ -80,7 +80,7 @@ export const dataEngineerQuestions = [
     {
         "topic": "Professional Data Engineer",
         "no": "63",
-        "image": "https://res.cloudinary.com/dkpkykbfx/image/upload/v1732561283/63_Q_blatsk.png",
+        "image": "https://res.cloudinary.com/dkpkykbfx/image/upload/v1732566748/63_Q_mqgj5z.png",
         "question": "You have some data, which is shown in the graphic below. The two dimensions are X and Y, and the shade of each dot represents what class it is. You want to classify this data accurately using a linear algorithm. To do this you need to add a synthetic feature. What should the value of that feature be?",
         "options": {
             "A": {
@@ -257,6 +257,40 @@ export const dataEngineerQuestions = [
             }
         },
         "answer": "B",
+        "reason": ""
+    },
+    {
+        "topic": "Professional Data Engineer",
+        "no": "10",
+        "image": "",
+        "question": "Your company is in a highly regulated industry. One of your requirements is to ensure individual users have access only to the minimum amount of information required to do their jobs. You want to enforce this requirement with Google BigQuery. Which three approaches can you take? (Choose three.)",
+        "options": {
+            "A": {
+                "text": "Disable writes to certain tables.",
+                "contains_image": ""
+            },
+            "B": {
+                "text": "Restrict access to tables by role.",
+                "contains_image": ""
+            },
+            "C": {
+                "text": "Ensure that the data is encrypted at all times.",
+                "contains_image": ""
+            },
+            "D": {
+                "text": "Restrict BigQuery API access to approved users.",
+                "contains_image": ""
+            },
+            "E": {
+                "text": "Segregate data across multiple tables or databases.",
+                "contains_image": ""
+            },
+            "F": {
+                "text": "Use Google Stackdriver Audit Logging to determine policy violations.",
+                "contains_image": ""
+            }
+        },
+        "answer": "BDE",
         "reason": ""
     }
 ]
