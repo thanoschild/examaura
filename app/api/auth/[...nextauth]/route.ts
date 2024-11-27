@@ -53,10 +53,7 @@ const handler = NextAuth({
           }
 
           if (!user.upassword) {
-            // Get the list of OAuth providers for this user
-            const providers = user.provider.split(',').filter(p => p !== 'credentials');
-            const providerList = providers.join(' or ');
-            throw new Error(`Please sign in with ${providerList}`);
+            throw new Error('Incorrect password');
           }
           
           const passwordMatch = await bcrypt.compare(

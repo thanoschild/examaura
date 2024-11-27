@@ -7,7 +7,9 @@ interface Users extends RowDataPacket {
     uid: number;
     uemail: string;
     upassword: string;
-    ucreatedAt: Date
+    ucreatedAt: Date;
+    resetToken: string;
+    resetTokenExpiry: Date;
 }
 
 export async function POST(request: Request) {
