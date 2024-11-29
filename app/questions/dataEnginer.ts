@@ -80,7 +80,7 @@ export const dataEngineerQuestions = [
     {
         "topic": "Professional Data Engineer",
         "no": "63",
-        "image": "https://res.cloudinary.com/dkpkykbfx/image/upload/v1732566748/63_Q_mqgj5z.png",
+        "image": "https://res.cloudinary.com/dkpkykbfx/image/upload/v1732875304/63_Q_ft9oyb.png",
         "question": "You have some data, which is shown in the graphic below. The two dimensions are X and Y, and the shade of each dot represents what class it is. You want to classify this data accurately using a linear algorithm. To do this you need to add a synthetic feature. What should the value of that feature be?",
         "options": {
             "A": {
@@ -184,7 +184,7 @@ export const dataEngineerQuestions = [
     {
         "topic": "Professional Data Engineer",
         "no": "4",
-        "image": "",
+        "image": "https://res.cloudinary.com/dkpkykbfx/image/upload/v1732856571/248_Q_luwgin.png",
         "question": "You create an important report for your large team in Google Data Studio 360. The report uses Google BigQuery as its data source. You notice that visualizations are not showing data that is less than 1 hour old. What should you do?",
         "options": {
             "A": {
