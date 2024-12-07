@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-white dark:bg-black transition-colors duration-300`}
       >
         <Toaster position="top-center" />
         <SessionProvider>{children}</SessionProvider>

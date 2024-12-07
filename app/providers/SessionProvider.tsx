@@ -2,15 +2,18 @@
 
 import { SessionProvider as Provider } from "next-auth/react"
 import { ReactNode } from "react"
+import { ThemeProvider } from 'next-themes'
 
 type Props = {
-  children: ReactNode
+    children: ReactNode
 }
 
 export default function SessionProvider({ children }: Props) {
-  return (
-    <Provider>
-      {children}
-    </Provider>
-  )
+    return (
+        <Provider>
+            <ThemeProvider attribute="class">
+                {children}
+            </ThemeProvider>
+        </Provider>
+    )
 }

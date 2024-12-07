@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import Header from "./components/header/header";
+import ExamSelector from "./components/search/ExamSelector";
 
 async function getUsers() {
   try {
@@ -22,21 +23,14 @@ export default async function Home() {
   const users = await getUsers();
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="p-4">
-        <h1>Users</h1>
-        {users && users.length > 0 ? (
-          <ul>
-            {users.map((user: any) => (
-              <li key={user.uid}>{user.uemail}</li>
-            ))}
-          </ul>
-        ) : (
-          <p>No users found</p>
-        )}
-      </div>
-    </>
+      <main className="flex-1 container mx-auto px-4">
+        <div className="flex items-center justify-center">
+          <ExamSelector />
+        </div>
+      </main>
+    </div>
   );
 }
 

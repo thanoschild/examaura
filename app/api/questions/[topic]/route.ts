@@ -12,14 +12,6 @@ interface Question extends RowDataPacket {
     reason: string;
 }
 
-interface QuestionOption extends RowDataPacket {
-    id: number;
-    question_id: number;
-    option_key: string; // A, B, C, D
-    option_text: string;
-    option_image: string; 
-}
-
 type TransformedQuestion = {
     id: number;
     topic: string;
