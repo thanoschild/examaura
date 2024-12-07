@@ -1,6 +1,9 @@
 import { Suspense } from "react";
 import Header from "./components/header/header";
 import ExamSelector from "./components/search/ExamSelector";
+import LogoCarousel from "./components/carousel/LogoCarousel";
+import TestimonialCarousel from "./components/carousel/TestimonialCarousel";
+import Footer from "./components/footer/Footer";
 
 async function getUsers() {
   try {
@@ -29,8 +32,10 @@ export default async function Home() {
         <div className="flex items-center justify-center">
           <ExamSelector />
         </div>
+        <LogoCarousel />
+        <TestimonialCarousel />
       </main>
+      <Footer />
     </div>
   );
 }
-

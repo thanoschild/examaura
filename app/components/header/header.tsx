@@ -49,10 +49,10 @@ const Header = (props: Props) => {
           </Link>
 
           <Link href="/topics" className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">
-            Exams Topics
+            All Exams
           </Link>
-          <a className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">About</a>
-          <a className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">Contacts</a>
+          <Link href="#" className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">About</Link>
+          <Link href="/contact" className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">Contacts</Link>
         </div>
 
         <div className="flex items-center gap-x-3 text-gray-600 font-semibold">

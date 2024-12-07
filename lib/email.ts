@@ -59,3 +59,32 @@ export function createPasswordResetEmailHtml(resetUrl: string) {
         </div>
     `;
 }
+
+interface ContactFormData {
+    name: string;
+    email: string;
+    message: string;
+}
+
+export function createContactFormEmailHtml({ name, email, message }: ContactFormData) {
+    return `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+            <h2 style="color: #333; margin-bottom: 20px;">New Contact Form Message</h2>
+            
+            <div style="background-color: #f8f9fa; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                <p style="margin: 0 0 10px 0;"><strong>From:</strong> ${name}</p>
+                <p style="margin: 0 0 10px 0;"><strong>Email:</strong> ${email}</p>
+            </div>
+
+            <div style="background-color: #ffffff; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px;">
+                <p style="margin: 0 0 10px 0;"><strong>Message:</strong></p>
+                <p style="margin: 0; white-space: pre-wrap;">${message}</p>
+            </div>
+
+            <hr style="border: 1px solid #eee; margin: 20px 0;">
+            <p style="color: #666; font-size: 12px; margin: 0;">
+                This message was sent from the ExamAura contact form.
+            </p>
+        </div>
+    `;
+}
