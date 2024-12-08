@@ -205,7 +205,6 @@ const SearchTopic = () => {
                                                 topic_name={item.topic_name}
                                                 total_qn={item.total_qn}
                                                 last_update_date={item.last_update_date}
-                                                formatTopicName={formatTopicName}
                                             />
                                         ))}
                                 </div>
@@ -232,7 +231,6 @@ const SearchTopic = () => {
                                     topic_name={item.topic_name}
                                     total_qn={item.total_qn}
                                     last_update_date={item.last_update_date}
-                                    formatTopicName={formatTopicName}
                                 />
                             ))}
                         </div>

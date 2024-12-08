@@ -7,7 +7,6 @@ type TopicCardProps = {
   topic_name: string;
   total_qn: number;
   last_update_date: string;
-  formatTopicName: (topic: string) => string;
 };
 
 const TopicCard = ({
@@ -16,10 +15,9 @@ const TopicCard = ({
   topic_name,
   total_qn,
   last_update_date,
-  formatTopicName,
 }: TopicCardProps) => {
+  const formattedTopicUrl = topic_name.toLowerCase().replace(/\s+/g, "-");
 
-  console.log("formatTopicName", formatTopicName(topic_name));
   return (
     <div
       key={id}
@@ -53,7 +51,7 @@ const TopicCard = ({
           {total_qn} Questions
         </div>
         <Link
-          href={`/topics/${formatTopicName(topic_name)}`}
+          href={`/topics/${formattedTopicUrl}`}
           className="group/btn flex items-center gap-1.5 sm:gap-2 rounded-lg bg-black hover:bg-black/90 dark:bg-white dark:hover:bg-white/90 text-white dark:text-black px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base font-semibold transition-colors duration-200"
         >
           View Questions
