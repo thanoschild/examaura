@@ -66,11 +66,31 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        {/* Copyright */}
-        <div className="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8 text-center">
-          <p className="text-gray-600 dark:text-gray-400">
-            © {new Date().getFullYear()} ExamAura. All rights reserved.
-          </p>
+
+        {/* Copyright and Legal */}
+        <div className="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-gray-600 dark:text-gray-400">
+              © {new Date().getFullYear()} ExamAura. All rights reserved.
+            </p>
+            
+            {/* Legal Links */}
+            <div className="flex items-center space-x-6">
+              <Link 
+                href="/terms" 
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white"
+              >
+                Terms & Conditions
+              </Link>
+              <span className="text-gray-300 dark:text-gray-700">|</span>
+              <Link 
+                href="/privacy" 
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white"
+              >
+                Privacy Policy
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -4,6 +4,7 @@ import ExamSelector from "./components/search/ExamSelector";
 import LogoCarousel from "./components/carousel/LogoCarousel";
 import TestimonialCarousel from "./components/carousel/TestimonialCarousel";
 import Footer from "./components/footer/Footer";
+import GrowthSection from "./components/others/GrowthSection";
 
 async function getUsers() {
   try {
@@ -28,12 +29,17 @@ export default async function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 container mx-auto px-4">
-        <div className="flex items-center justify-center">
-          <ExamSelector />
+      <main className="flex-1">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center">
+            <ExamSelector />
+          </div>
+          <LogoCarousel />
+          <TestimonialCarousel />
         </div>
-        <LogoCarousel />
-        <TestimonialCarousel />
+        
+        {/* Growth Section */}
+        <GrowthSection />
       </main>
       <Footer />
     </div>
