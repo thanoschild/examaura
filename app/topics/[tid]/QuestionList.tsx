@@ -113,7 +113,7 @@ const QuestionList: React.FC<{ questions: Question[] }> = ({ questions }) => {
 
                         {visibleAnswers[index] && (
                             <div className="mt-4 p-4 bg-white dark:bg-black border border-black/20 dark:border-white/20 rounded-lg">
-                                <p className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                                <p className="font-semibold text-gray-800 dark:text-gray-200">
                                     {`Answer: Option ${question.correct_answer}`}
                                 </p>
                                 {question.reason && (
