@@ -22,10 +22,6 @@ const ExamSelector = () => {
   const [selectedExam, setSelectedExam] = useState('');
   const examDropdownRef = useRef<HTMLDivElement>(null);
 
-  const formatTopicName = (topic: string) => {
-    return topic.toLowerCase().replace(/\s+/g, "-");
-  };
-
   useEffect(() => {
     const fetchTopics = async () => {
       try {

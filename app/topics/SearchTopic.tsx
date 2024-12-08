@@ -33,10 +33,6 @@ const SearchTopic = () => {
         return acc;
     }, {} as Record<string, Topic[]>);
 
-    const formatTopicName = (topic: string) => {
-        return topic.toLowerCase().replace(/\s+/g, "-");
-    };
-
     useEffect(() => {
         const fetchTopics = async () => {
             try {
