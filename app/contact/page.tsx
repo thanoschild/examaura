@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Header from "@/app/components/header/header";
 import toast from 'react-hot-toast';
+import Footer from '../components/footer/Footer';
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -46,9 +47,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
       <Header />
-      <div className="flex-grow flex items-center justify-center bg-white dark:bg-black">
+      <div className="min-h-screen flex-grow flex items-center justify-center bg-white dark:bg-black">
         <div className="w-full max-w-2xl p-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
@@ -108,6 +109,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

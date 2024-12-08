@@ -51,7 +51,7 @@ const Header = (props: Props) => {
           <Link href="/topics" className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">
             All Exams
           </Link>
-          <Link href="#" className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">About</Link>
+          <Link href="/about" className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">About</Link>
           <Link href="/contact" className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">Contacts</Link>
         </div>
 
@@ -70,7 +70,7 @@ const Header = (props: Props) => {
             </button>
           </Link>
 
-          <Link href="#">
+          <Link href="/topics">
             <button
               type="button"
               className="py-3 px-3 flex justify-center items-center size-[46px] text-sm font-medium rounded-full border border-transparent text-black hover:bg-gray-100 hover:border-gray-200 dark:text-gray-300 dark:hover:text-white dark:hover:border-gray-800 dark:hover:bg-[#27272A] focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
