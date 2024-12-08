@@ -66,7 +66,7 @@ const QuestionList: React.FC<{ questions: Question[] }> = ({ questions }) => {
                                 <div key={option.option_key} className="flex items-baseline">
                                     <label
                                         htmlFor={`${question.question_no}-${option.option_key}`}
-                                        className="flex items-center p-4 w-full bg-white dark:bg-black border border-black/20 dark:border-white/20 rounded-lg text-sm hover:border-black/40 dark:hover:border-white/40 transition-all duration-200"
+                                        className={`flex items-center p-4 w-full bg-white dark:bg-black border ${visibleAnswers[index] && question.correct_answer.includes(option.option_key) ? "border-green-400" : "border-black/20 dark:border-white/20"} rounded-lg text-sm hover:border-black/40 dark:hover:border-white/40 transition-all duration-200`}
                                     >
                                         <input
                                             type={String(question.correct_answer).length > 1 ? "checkbox" : "radio"}
