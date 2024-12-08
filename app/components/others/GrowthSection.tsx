@@ -35,7 +35,7 @@ const GrowthSection = () => {
 
         {/* Graph */}
         <div className="relative">
-          <div className="w-full h-[450px] rounded-lg p-4 relative bg-gradient-to-b from-white via-gray-50 to-gray-100 dark:from-black dark:via-black dark:to-black">
+          <div className="w-full max-w-[450px] h-[400px] aspect-square rounded-lg p-4 relative bg-gradient-to-b from-white via-gray-50 to-gray-100 dark:from-black dark:via-black dark:to-black mx-auto">
             {/* Grid Lines */}
             <div className="absolute inset-0 grid grid-cols-6 grid-rows-6">
               {[...Array(36)].map((_, i) => (
@@ -78,7 +78,7 @@ const GrowthSection = () => {
 
               {/* End Point Circle */}
               <div 
-                className="absolute top-[25%] right-[10%] w-4 h-4 bg-[#F59558] rounded-full 
+                className="absolute top-[25%] right-[10%] w-3 h-3 bg-[#F59558] rounded-full 
                           shadow-lg shadow-[#F59558]/30 transform translate-x-1/2 -translate-y-1/2
                           ring-2 ring-[#F59558]/20 ring-offset-2 ring-offset-black/5"
               />
@@ -87,16 +87,16 @@ const GrowthSection = () => {
             {/* Gradient Overlays */}
             <div className="absolute inset-0 pointer-events-none">
               {/* Top gradient */}
-              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white via-white/60 to-transparent dark:from-black dark:via-black/60 dark:to-transparent" />
+              <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white via-white/60 to-transparent dark:from-black dark:via-black/60 dark:to-transparent" />
               
               {/* Bottom gradient */}
-              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/60 to-transparent dark:from-black dark:via-black/60 dark:to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white via-white/60 to-transparent dark:from-black dark:via-black/60 dark:to-transparent" />
               
               {/* Left gradient */}
-              <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white via-white/60 to-transparent dark:from-black dark:via-black/60 dark:to-transparent" />
+              <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white via-white/60 to-transparent dark:from-black dark:via-black/60 dark:to-transparent" />
               
               {/* Right gradient */}
-              <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white/60 to-transparent dark:from-black dark:via-black/60 dark:to-transparent" />
+              <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white via-white/60 to-transparent dark:from-black dark:via-black/60 dark:to-transparent" />
             </div>
           </div>
         </div>

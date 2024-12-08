@@ -185,7 +185,7 @@ const ExamSelector = () => {
               </h2>
               <div className="flex-grow h-0.5 bg-gray-200 dark:bg-gray-700"></div>
             </div>
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 p-4 sm:p-6 w-full">
               {topics
                 .filter(topic => topic.topic_name === selectedExam)
                 .map(item => (
@@ -212,7 +212,7 @@ const ExamSelector = () => {
               </h2>
               <div className="flex-grow h-0.5 bg-gray-200 dark:bg-gray-700"></div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 p-4 sm:p-6 w-full">
               {topics
                 .filter(topic =>
                   topic.company_name === selectedProvider &&
