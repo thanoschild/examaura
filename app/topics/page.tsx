@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/header/header";
 import SearchTopic from "./SearchTopic";
-import Footer from "../components/footer/Footer";
+import Footer from "../components/footer/footer";
 
 const Topics = async () => {
   return (

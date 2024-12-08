@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/header/header";
-import Footer from "../components/footer/Footer";
+import Footer from "../components/footer/footer";
 import Link from "next/link";
 import { FaRegClock, FaRegLightbulb, FaRegClipboard } from 'react-icons/fa';
 import { IoRefreshOutline } from 'react-icons/io5';

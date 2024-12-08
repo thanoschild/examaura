@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Header from "@/app/components/header/header";
 import Link from "next/link";
-import Footer from '../../components/footer/Footer';
+import Footer from '../../components/footer/footer';
 import toast from "react-hot-toast";
 
 

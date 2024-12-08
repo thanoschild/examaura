@@ -6,7 +6,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import Footer from '../../components/footer/Footer';
+import Footer from '../../components/footer/footer';
 
 const Login = () => {
   const router = useRouter();

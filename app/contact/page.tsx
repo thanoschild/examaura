@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Header from "@/app/components/header/header";
 import toast from 'react-hot-toast';
-import Footer from '../components/footer/Footer';
+import Footer from '../components/footer/footer';
 
 const Contact = () => {
   const [form, setForm] = useState({

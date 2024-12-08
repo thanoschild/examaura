@@ -3,7 +3,7 @@ import Header from "./components/header/header";
 import ExamSelector from "./components/search/ExamSelector";
 import LogoCarousel from "./components/carousel/LogoCarousel";
 import TestimonialCarousel from "./components/carousel/TestimonialCarousel";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/footer/footer";
 import GrowthSection from "./components/others/GrowthSection";
 import FeaturesSection from "./components/others/FeaturesSection";
 
