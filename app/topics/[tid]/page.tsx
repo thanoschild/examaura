@@ -20,8 +20,8 @@ type Question = {
   question_image: string;
 };
 
-const TopicId = async ({ params }: { params: { tid: string } }) => {
-  const { tid } = await params;
+const TopicId = async ({ params }: { params: Promise<{ tid: string }> }) => {
+  const { tid } = (await params);
 
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/questions/${tid}`,{

@@ -1,5 +1,5 @@
 import db from "@/lib/db";
-import { NextResponse, NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { RowDataPacket } from "mysql2";
 
 interface Question extends RowDataPacket {
@@ -27,12 +27,9 @@ type TransformedQuestion = {
     }[];
 }
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { topic: string } }
-) {
+export async function GET(req: NextRequest) {
   try {
-    const topic = params.topic.replaceAll('-', ' ');
+    const topic = req.url.split('/').pop()?.replaceAll('-', ' ') || '';
     console.log("topic: ", topic);
 
     // Query to fetch questions along with their options for the specified topic
@@ -47,7 +44,6 @@ export async function GET(
     if (rawQuestions.length === 0) {
       return NextResponse.json({ error: 'No questions found' }, { status: 404 });
     }
-    console.log("data: ", [rawQuestions])
 
     const groupedQuestions = rawQuestions.reduce((acc, curr) => {
       // Find existing question or create new
