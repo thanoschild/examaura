@@ -8,12 +8,12 @@ const GrowthSection = () => {
         {/* Text Content */}
         <div className="space-y-6">
           <h2 className="text-5xl font-bold text-black dark:text-white">
-          We're still growing our question base
+          We&apos;re still growing our question base
           </h2>
           
           <div className="space-y-4 text-gray-600 dark:text-gray-400">
             <p className="text-lg">
-              We're continuously expanding our question bank with high-quality exam preparation materials. New questions and detailed explanations are added daily to help you succeed in your certification journey.
+              We&apos;re continuously expanding our question bank with high-quality exam preparation materials. New questions and detailed explanations are added daily to help you succeed in your certification journey.
             </p>
             
             <p className="text-lg">
@@ -28,7 +28,7 @@ const GrowthSection = () => {
               >
                 Let us know
               </Link>{' '}
-              and we'll prioritize adding more questions for your target certification!
+              and we&apos;ll prioritize adding more questions for your target certification!
             </p>
           </div>
         </div>

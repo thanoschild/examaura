@@ -6,11 +6,9 @@ import Link from "next/link";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import Footer from "@/app/components/footer/Footer";
+import Footer from '../../components/footer/Footer';
 
-type Props = {};
-
-const Login = (props: Props) => {
+const Login = () => {
   const router = useRouter();
   const [form, setForm] = useState({
     email: "",
@@ -63,7 +61,7 @@ const Login = (props: Props) => {
                   Sign in
                 </h1>
                 <p className="text-base text-gray-600 dark:text-gray-400">
-                  Don't have an account yet?{" "}
+                  Don&apos;t have an account yet?{" "}
                   <Link
                     className="text-black dark:text-white hover:opacity-80 font-semibold"
                     href="/auth/sign-up"

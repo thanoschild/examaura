@@ -3,7 +3,9 @@
 import React, { useState } from "react";
 import Header from "@/app/components/header/header";
 import Link from "next/link";
-import Footer from "@/app/components/footer/Footer";
+import Footer from '../../components/footer/Footer';
+import toast from "react-hot-toast";
+
 
 const ForgetPassword = () => {
     const [email, setEmail] = useState('');
@@ -28,7 +30,8 @@ const ForgetPassword = () => {
             } else {
                 setMessage(data.error || 'Something went wrong');
             }
-        } catch (error) {
+        } catch {
+            toast.error("Failed to send reset link");
             setMessage('Failed to send reset email');
         } finally {
             setLoading(false);

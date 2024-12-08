@@ -6,10 +6,9 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import Footer from "@/app/components/footer/Footer";
-type Props = {};
+import Footer from '../../components/footer/Footer';
 
-const SignUp = (props: Props) => {
+const SignUp = () => {
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -17,7 +16,6 @@ const SignUp = (props: Props) => {
     acceptTerms: false
   });
   const [pending, setPending] = useState(false);
-  const [error, setError] = useState(null);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {

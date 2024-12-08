@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../components/header/header";
 import Footer from "../components/footer/Footer";
-import Image from "next/image";
 import Link from "next/link";
 import { FaRegClock, FaRegLightbulb, FaRegClipboard } from 'react-icons/fa';
 import { IoRefreshOutline } from 'react-icons/io5';
@@ -38,7 +37,7 @@ const About = () => {
                                     Our Mission
                                 </h2>
                                 <p className="text-lg text-gray-600 dark:text-gray-400">
-                                    At ExamAura, we're committed to providing high-quality, up-to-date practice materials for certification exams. Our mission is to help professionals succeed in their certification journey by offering:
+                                    At ExamAura, we&apos;re committed to providing high-quality, up-to-date practice materials for certification exams. Our mission is to help professionals succeed in their certification journey by offering:
                                 </p>
                                 <ul className="space-y-4 text-gray-600 dark:text-gray-400">
                                     <li className="flex items-start">

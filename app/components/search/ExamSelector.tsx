@@ -1,8 +1,6 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-import Link from 'next/link';
-import { FaChevronRight } from "react-icons/fa";
 import TopicCard from '../card/TopicCard';
 
 type Topic = {
@@ -23,16 +21,6 @@ const ExamSelector = () => {
   const [isExamOpen, setIsExamOpen] = useState(false);
   const [selectedExam, setSelectedExam] = useState('');
   const examDropdownRef = useRef<HTMLDivElement>(null);
-
-  // Group topics by company_name
-  const groupedTopics = topics.reduce((acc, topic) => {
-    const company = topic.company_name;
-    if (!acc[company]) {
-      acc[company] = [];
-    }
-    acc[company].push(topic);
-    return acc;
-  }, {} as Record<string, Topic[]>);
 
   const formatTopicName = (topic: string) => {
     return topic.toLowerCase().replace(/\s+/g, "-");

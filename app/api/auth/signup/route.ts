@@ -72,7 +72,7 @@ export async function POST(request: Request) {
         return NextResponse.json(
             { message: "User created successfully" },
             { status: 201 });
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error("Database error:", error);
 
         return NextResponse.json(

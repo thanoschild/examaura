@@ -1,11 +1,10 @@
 "use client";
 
 import React, { use, useState } from "react";
-import Header from "@/app/components/header/header";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
-type Props = {};
 
 const ResetPassword = ({ params }: { params: Promise<{ token: string }> }) => {
   const router = useRouter();
@@ -48,7 +47,8 @@ const ResetPassword = ({ params }: { params: Promise<{ token: string }> }) => {
       } else {
         setMessage(data.error || 'Something went wrong');
       }
-    } catch (error) {
+    } catch {
+      toast.error("Failed to send reset link");
       setMessage('Failed to reset password');
     } finally {
       setLoading(false);

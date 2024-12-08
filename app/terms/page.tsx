@@ -35,7 +35,7 @@ const Terms = () => {
               ExamAura is an online testing and education service that carries out assessment of subscribers and provides guidance and analysis of their performance. A poor score in such assessment is not meant to discourage the Subscriber or indicate likely results in any actual examination. Similarly, a high score does not guarantee success in subsequent examinations. ExamAura accepts no liability on this account.
             </p>
             <p className="mb-4">
-              The information provided on this Site is on "as is" basis. Though every care has been taken to provide correct and up-to-date information, ExamAura does not warrant the accuracy, completeness and timely availability of the information provided on the Site and accepts no responsibility or liability for any error or omission in any information provided.
+              The information provided on this Site is on &quot;as is&quot; basis. Though every care has been taken to provide correct and up-to-date information, ExamAura does not warrant the accuracy, completeness and timely availability of the information provided on the Site and accepts no responsibility or liability for any error or omission in any information provided.
             </p>
           </section>
 

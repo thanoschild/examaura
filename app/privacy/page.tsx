@@ -17,7 +17,7 @@ const Privacy = () => {
         <div className="space-y-8 text-gray-600 dark:text-gray-400">
           <section>
             <p className="mb-4">
-              At ExamAura we recognize that privacy is important. We do not rent, sell, or share personal information about you with other people or nonaffiliated companies except to provide products or services you've requested, when we have your permission. You have rights under this Privacy Policy, and all business or personal information provided to ExamAura is on a voluntary basis.
+              At ExamAura we recognize that privacy is important. We do not rent, sell, or share personal information about you with other people or nonaffiliated companies except to provide products or services you&apos;ve requested, when we have your permission. You have rights under this Privacy Policy, and all business or personal information provided to ExamAura is on a voluntary basis.
             </p>
           </section>
 

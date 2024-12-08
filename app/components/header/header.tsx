@@ -8,9 +8,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import { MdOutlineShoppingCart, MdOutlineWbSunny } from "react-icons/md";
 import { TbLogout } from "react-icons/tb";
 
-type Props = {};
-
-const Header = (props: Props) => {
+const Header = () => {
   const { data: session, status } = useSession();
   const [showDropdown, setShowDropdown] = useState(false);
   const {theme, setTheme} = useTheme();

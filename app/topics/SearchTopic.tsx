@@ -1,8 +1,6 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-import Link from 'next/link';
-import { FaChevronRight } from "react-icons/fa";
 import TopicCard from '../components/card/TopicCard';
 
 
@@ -217,30 +215,29 @@ const SearchTopic = () => {
                 )}
 
                 {/* All Topics Section */}
-                {(
-                    <div className="w-full max-w-[90rem] mb-12">
+                {Object.entries(groupedTopics).map(([company, companyTopics]) => (
+                    <div key={company} className="w-full max-w-[90rem] mb-12">
                         <div className="flex items-center gap-4 mb-6">
                             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-                                {selectedProvider}
+                                {company}
                             </h2>
                             <div className="flex-grow h-0.5 bg-gray-200 dark:bg-gray-700"></div>
                         </div>
                         <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6">
-                            {topics
-                                .map(item => (
-                                    <TopicCard
-                                        key={item.id}
-                                        id={item.id}
-                                        company_name={item.company_name}
-                                        topic_name={item.topic_name}
-                                        total_qn={item.total_qn}
-                                        last_update_date={item.last_update_date}
-                                        formatTopicName={formatTopicName}
-                                    />
-                                ))}
+                            {companyTopics.map(item => (
+                                <TopicCard
+                                    key={item.id}
+                                    id={item.id}
+                                    company_name={item.company_name}
+                                    topic_name={item.topic_name}
+                                    total_qn={item.total_qn}
+                                    last_update_date={item.last_update_date}
+                                    formatTopicName={formatTopicName}
+                                />
+                            ))}
                         </div>
                     </div>
-                )}
+                ))}
             </div>
         </div>
     );
