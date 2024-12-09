@@ -35,7 +35,7 @@ const GrowthSection = () => {
 
         {/* Graph */}
         <div className="relative w-full flex justify-center lg:justify-end">
-          <div className="w-full max-w-[400px] lg:max-w-[450px] aspect-square rounded-lg p-4 relative bg-gradient-to-b from-white via-gray-50 to-gray-100 dark:from-black dark:via-black dark:to-black">
+          <div className="w-full max-w-[450px] h-[400px] aspect-square rounded-lg p-4 relative bg-gradient-to-b from-white via-gray-50 to-gray-100 dark:from-black dark:via-black dark:to-black">
             {/* Grid Lines */}
             <div className="absolute inset-0 grid grid-cols-6 grid-rows-6">
               {[...Array(36)].map((_, i) => (
