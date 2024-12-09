@@ -49,7 +49,7 @@ const ForgetPassword = () => {
                                 <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
                                     Forgot password?
                                 </h1>
-                                <p className="text-lg text-gray-600 dark:text-gray-400">
+                                <p className="text-base text-gray-600 dark:text-gray-400">
                                     Remember your password?{" "}
                                     <Link
                                         className="text-black dark:text-white hover:opacity-80 font-semibold"

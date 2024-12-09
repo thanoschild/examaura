@@ -11,14 +11,26 @@ import { TbLogout } from "react-icons/tb";
 const Header = () => {
   const { data: session, status } = useSession();
   const [showDropdown, setShowDropdown] = useState(false);
-  const {theme, setTheme} = useTheme();
+  const { theme, setTheme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Handle initial mount and system theme
+  useEffect(() => {
+    setMounted(true);
+    // Set initial theme to system preference
+    if (!localStorage.getItem('theme')) {
+      setTheme('system');
+    }
+  }, [setTheme]);
 
   const toggleTheme = (e: React.MouseEvent) => {
     e.preventDefault();
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  }
+    const currentTheme = theme === 'system' ? systemTheme : theme;
+    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  };
 
+  // Handle click outside for dropdown
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -32,8 +44,17 @@ const Header = () => {
     };
   }, []);
 
+  // Don't render theme toggle until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return null; // or a loading placeholder
+  }
+
+  // Determine which icon to show based on current theme
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const ThemeIcon = currentTheme === 'dark' ? MdOutlineWbSunny : FiMoon;
+
   return (
-    <header className="flex flex-wrap  md:justify-start md:flex-nowrap z-50 w-full bg-white border-b border-gray-200 dark:bg-black dark:border-neutral-700 sticky top-0" ref={dropdownRef}>
+    <header className="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-white border-b border-gray-200 dark:bg-black dark:border-neutral-700 sticky top-0" ref={dropdownRef}>
       <nav className="relative max-w-[85rem] w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 py-3 px-4 sm:px-6 lg:px-8 font-sans">
         <div className="flex justify-between items-center gap-x-8 text-gray-600 text-md font-[500]">
           <Link href="/" className="flex items-center cursor-pointer">
@@ -60,11 +81,7 @@ const Header = () => {
               type="button"
               className="py-3 px-3 flex justify-center items-center size-[46px] text-sm font-medium rounded-full border border-transparent text-black hover:bg-gray-100 hover:border-gray-200 dark:text-gray-300 dark:hover:text-white dark:hover:border-gray-800 dark:hover:bg-[#27272A] focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
             >
-             {theme === 'dark' ? (
-              <MdOutlineWbSunny className="w-8 h-8"/>
-            ) : (
-              <FiMoon className="w-8 h-8"/>
-            )}
+              <ThemeIcon className="w-8 h-8"/>
             </button>
           </Link>
 

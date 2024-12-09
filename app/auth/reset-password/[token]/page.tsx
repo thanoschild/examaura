@@ -62,6 +62,10 @@ const ResetPassword = ({ params }: { params: Promise<{ token: string }> }) => {
           <div className="p-4 sm:p-7">
             <div className="text-center mb-8">
               <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                <span className='text-black dark:text-white font-semibold'>EXAM</span>
+                <span className='text-[#F59558] font-semibold'>AURA</span>
+              </h1>
+              <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
                 Create new password
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400">
