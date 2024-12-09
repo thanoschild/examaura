@@ -34,14 +34,14 @@ const QuestionList: React.FC<{ questions: Question[] }> = ({ questions }) => {
         <>
             {questions.map((question, index) => (
                 <div key={index} className="max-w-5xl min-w-10xl mx-auto p-6 bg-white dark:bg-black border border-black/20 dark:border-white/20 rounded-lg m-10 transition-all duration-300 hover:border-black/40 dark:hover:border-white/40">
-                    <div className="inline-flex items-center gap-1 mb-4 text-sm bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-lg font-semibold">
+                    {/* <div className="inline-flex items-center gap-1 mb-4 text-sm bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-lg font-semibold">
                         <div className="flex items-center size-[15px] text-sm font-medium">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" className="fill-white dark:fill-black">
                                 <path fillRule="evenodd" d="M12 2H6a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-8h-6a3 3 0 0 1-3-3zm9 7v-.172a3 3 0 0 0-.879-2.12l-3.828-3.83A3 3 0 0 0 14.172 2H14v6a1 1 0 0 0 1 1z" clipRule="evenodd" />
                             </svg>
                         </div>
                         <span>{question.topic}</span>
-                    </div>
+                    </div> */}
 
                     <div>
                         <div className="text-base text-gray-800 dark:text-gray-200 mb-4">
@@ -94,7 +94,7 @@ const QuestionList: React.FC<{ questions: Question[] }> = ({ questions }) => {
 
                         <button
                             onClick={() => toggleAnswer(index)}
-                            className="w-full flex items-center justify-between p-4 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-black/90 dark:hover:bg-white/90 transition-colors duration-200 font-semibold"
+                            className="w-full flex items-center justify-between p-3 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-black/90 dark:hover:bg-white/90 transition-colors duration-200 font-semibold"
                             aria-expanded={visibleAnswers[index]}
                         >
                             <span>Show Answer</span>
