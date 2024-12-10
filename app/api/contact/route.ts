@@ -13,7 +13,6 @@ export async function POST(req: Request) {
             );
         }
 
-        console.log("email: ", email);
         
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

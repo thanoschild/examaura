@@ -188,23 +188,19 @@ const SearchTopic = () => {
                             </h2>
                             <div className="flex-grow h-0.5 bg-gray-200 dark:bg-gray-700"></div>
                         </div>
-                        <div className="flex justify-center items-center w-full">
-                            <div className="w-full max-w-3xl">
-                                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 p-4 sm:p-6 w-full">
-                                    {topics
-                                        .filter(topic => topic.topic_name === selectedExam)
-                                        .map(item => (
-                                            <TopicCard
-                                                key={item.id}
-                                                id={item.id}
-                                                company_name={item.company_name}
-                                                topic_name={item.topic_name}
-                                                total_qn={item.total_qn}
-                                                last_update_date={item.last_update_date}
-                                            />
-                                        ))}
-                                </div>
-                            </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 p-4 sm:p-6 w-full">
+                            {topics
+                                .filter(topic => topic.topic_name === selectedExam)
+                                .map(item => (
+                                    <TopicCard
+                                        key={item.id}
+                                        id={item.id}
+                                        company_name={item.company_name}
+                                        topic_name={item.topic_name}
+                                        total_qn={item.total_qn}
+                                        last_update_date={item.last_update_date}
+                                    />
+                                ))}
                         </div>
                     </div>
                 )}
