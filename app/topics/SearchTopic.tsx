@@ -78,7 +78,7 @@ const SearchTopic = () => {
     }, []);
 
     return (
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center mt-10">
             {/* Dropdowns Section */}
             <div className="flex flex-col items-center justify-center space-y-6">
                 <div className="flex flex-col md:flex-row gap-4 w-full px-4">
@@ -86,7 +86,7 @@ const SearchTopic = () => {
                         <label className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
                             Select Certification Provider
                         </label>
-                        <div className="relative inline-flex w-full" ref={dropdownRef}>
+                        <div className="relative inline-flex w-full min-w-[340px]" ref={dropdownRef}>
                             <button
                                 type="button"
                                 onClick={() => setIsOpen(!isOpen)}

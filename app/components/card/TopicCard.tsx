@@ -21,20 +21,20 @@ const TopicCard = ({
   return (
     <div
       key={id}
-      className="group relative rounded-xl bg-white dark:bg-black border border-black/20 dark:border-white/20 p-4 transition-all duration-300 hover:border-black/40 dark:hover:border-white/40 w-full min-h-[180px] flex flex-col justify-between"
+      className="group relative rounded-xl bg-white dark:bg-black border border-black/20 dark:border-white/20 p-4 transition-all duration-300 hover:border-black/40 dark:hover:border-white/40 w-full min-h-[180px] min-w-[320px] flex flex-col justify-between"
     >
       <div>
         <div className="flex items-center gap-2">
-          <h2 className="text-base sm:text-lg lg:text-xl font-bold text-gray-800 dark:text-white truncate">
+          <h2 className="text-base sm:text-lg lg:text-lg font-bold text-gray-800 dark:text-white truncate">
             {company_name}
           </h2>
         </div>
         <div className="mt-3 sm:mt-4">
           <div className="relative group/tooltip">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-600 dark:text-gray-300 truncate">
+            <h1 className="sm:text-2xl font-bold text-gray-600 dark:text-gray-300 truncate">
               {topic_name}
             </h1>
-            <div className="absolute left-0 -top-2 translate-y-[-100%] hidden group-hover/tooltip:block z-10">
+            <div className="absolute left-0 -top-2 translate-y-[-100%] hidden">
               <div className="bg-gray-900 dark:bg-gray-100 text-white dark:text-black text-xs sm:text-sm rounded-lg py-1.5 sm:py-2 px-3 sm:px-4 max-w-[250px] sm:max-w-[300px] md:max-w-[400px] break-words">
                 {topic_name}
               </div>
@@ -52,7 +52,8 @@ const TopicCard = ({
         </div>
         <Link
           href={`/topics/${formattedTopicUrl}`}
-          className="group/btn flex items-center gap-1.5 sm:gap-2 rounded-lg bg-black hover:bg-black/90 dark:bg-white dark:hover:bg-white/90 text-white dark:text-black px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base font-semibold transition-colors duration-200"
+          className="group/btn flex items-center gap-1.5 sm:gap-2 rounded-lg bg-black hover:bg-black/90 dark:bg-white dark:hover:bg-white/90 
+          text-white dark:text-black px-3 py-1.5 sm:py-2 text-sm transition-colors duration-200"
         >
           View Questions
           <div className="transition-transform group-hover/btn:translate-x-0.5">

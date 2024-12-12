@@ -9,7 +9,7 @@ const Topics = async () => {
       
       <div className="h-screen flex flex-col">
         <Header />
-        <div className="flex flex-col items-center justify-center lg:m-16 p-4">
+        <div className="flex flex-col items-center justify-center">
           <div className="flex items-center justify-center">
             <SearchTopic />
           </div>
