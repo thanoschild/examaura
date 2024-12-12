@@ -22,13 +22,13 @@ const LogoCarousel = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="w-full bg-white dark:bg-black py-16">
+    <div className="w-full bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-black dark:text-white">
             Comprehensive Question Banks
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
+          <p className="text-sm md:text-lg text-gray-600 dark:text-gray-400">
             Practice with our extensive collection of exam questions for these leading certification providers
           </p>
         </div>
@@ -49,7 +49,7 @@ const LogoCarousel = () => {
               {[...logos, ...logos, ...logos].map((logo, index) => (
                 <div
                   key={`${logo.id}-${index}`}
-                  className="inline-block w-[150px] h-[60px] flex-shrink-0"
+                  className="inline-block w-[100px] h-[40px] md:w-[150px] md:h-[60px] flex-shrink-0"
                 >
                   <Image
                     src={logo.url}

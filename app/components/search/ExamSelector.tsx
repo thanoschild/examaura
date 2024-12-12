@@ -69,8 +69,8 @@ const ExamSelector = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       {/* Dropdowns Section */}
-      <div className="flex flex-col items-center justify-center space-y-6 mt-20">
-        <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-8">
+      <div className="flex flex-col items-center justify-center space-y-6 mt-8 md:mt-20">
+        <h1 className="text-2xl lg:text-4xl font-bold text-gray-800 dark:text-white md-4 md:mb-8">
           Select Your Certification Path
         </h1>
 
@@ -171,12 +171,12 @@ const ExamSelector = () => {
       </div>
 
       {/* Topics Display Section */}
-      <div className="flex flex-col items-center justify-center lg:m-16 p-4 w-full">
+      <div className="flex flex-col items-center justify-center mt-8 md:mt-20 lg:m-16 p-4 w-full">
         {/* Selected Topic Section */}
         {selectedExam && (
-          <div className="w-full max-w-[90rem] mb-12">
+          <div className="w-full max-w-[90rem] mb-6">
             <div className="flex items-center gap-4 mb-6">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
                 Selected Certification
               </h2>
               <div className="flex-grow h-0.5 bg-gray-200 dark:bg-gray-700"></div>
@@ -202,7 +202,7 @@ const ExamSelector = () => {
         {selectedExam && (
           <div className="w-full max-w-[90rem] mb-12">
             <div className="flex items-center gap-4 mb-6">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
                 More from {selectedProvider}
               </h2>
               <div className="flex-grow h-0.5 bg-gray-200 dark:bg-gray-700"></div>

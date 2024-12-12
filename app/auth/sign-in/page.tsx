@@ -57,10 +57,10 @@ const Login = () => {
           <div className="w-full max-w-md mt-7">
             <div className="p-4 sm:p-7">
               <div className="text-center mb-8">
-                <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                <h1 className="text-xl md:text-2xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-4">
                   Sign in
                 </h1>
-                <p className="text-base text-gray-600 dark:text-gray-400">
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
                   Don&apos;t have an account yet?{" "}
                   <Link
                     className="text-black dark:text-white hover:opacity-80 font-semibold"

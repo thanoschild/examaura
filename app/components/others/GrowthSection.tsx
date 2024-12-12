@@ -7,20 +7,16 @@ const GrowthSection = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center justify-items-center">
         {/* Text Content */}
         <div className="space-y-6 w-full max-w-2xl lg:max-w-none">
-          <h2 className="text-4xl sm:text-5xl font-bold text-black dark:text-white">
+          <h2 className="text-2xl lg:text-4xl sm:text-5xl font-bold text-black dark:text-white">
           We&apos;re still growing our question base
           </h2>
           
           <div className="space-y-4 text-gray-600 dark:text-gray-400">
-            <p className="text-lg">
+            <p className="text-base md:text-lg">
               We&apos;re continuously expanding our question bank with high-quality exam preparation materials. New questions and detailed explanations are added daily to help you succeed in your certification journey.
             </p>
             
-            <p className="text-lg">
-              Our collection covers various certification exams including AWS, Azure, Google Cloud, and other popular tech certifications. Each question is carefully crafted to match the actual exam pattern.
-            </p>
-            
-            <p className="text-lg">
+            <p className="text-base md:text-lg">
               Have a specific certification in mind?{' '}
               <Link 
                 href="/contact" 
@@ -35,7 +31,7 @@ const GrowthSection = () => {
 
         {/* Graph */}
         <div className="relative w-full flex justify-center lg:justify-end">
-          <div className="w-full max-w-[450px] h-[400px] aspect-square rounded-lg p-4 relative bg-gradient-to-b from-white via-gray-50 to-gray-100 dark:from-black dark:via-black dark:to-black">
+          <div className="w-full max-w-[350px] max-h-[300px] md:max-w-[450px] md:h-[400px] aspect-square rounded-lg p-4 relative bg-gradient-to-b from-white via-gray-50 to-gray-100 dark:from-black dark:via-black dark:to-black">
             {/* Grid Lines */}
             <div className="absolute inset-0 grid grid-cols-6 grid-rows-6">
               {[...Array(36)].map((_, i) => (

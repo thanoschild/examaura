@@ -61,7 +61,7 @@ const SignUp = () => {
           <div className="w-full max-w-md mt-7">
             <div className="p-4 sm:p-7">
               <div className="text-center mb-8">
-                <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                <h1 className="text-xl md:text-2xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-4">
                   Sign up
                 </h1>
                 <p className="text-base text-gray-600 dark:text-gray-400">

@@ -16,12 +16,12 @@ const About = () => {
                 <div className="w-full py-16 md:py-24">
                     <div className="max-w-7xl mx-auto px-4">
                         <div className="text-center space-y-4">
-                            <h1 className="text-4xl md:text-5xl font-bold text-black dark:text-white">
+                            <h1 className="text-2xl lg:text-4xl font-bold text-black dark:text-white">
                                 <span>About </span>
                                 <span className='text-black dark:text-white font-semibold'>EXAM</span>
                                 <span className='text-[#F59558] font-semibold'>AURA</span>
                             </h1>
-                            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                            <p className="text-base md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                                 Your trusted companion for certification exam preparation, helping professionals achieve their career goals through comprehensive practice materials.
                             </p>
                         </div>
@@ -29,14 +29,14 @@ const About = () => {
                 </div>
 
                 {/* Mission Section */}
-                <div className="w-full py-16 bg-gray-50 dark:bg-neutral-900">
+                <div className="w-full py-10 md:py-16 bg-gray-50 dark:bg-neutral-900">
                     <div className="max-w-7xl mx-auto px-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                             <div className="space-y-6">
-                                <h2 className="text-3xl font-bold text-black dark:text-white">
+                                <h2 className="text-2xl lg:text-3xl font-bold text-black dark:text-white">
                                     Our Mission
                                 </h2>
-                                <p className="text-lg text-gray-600 dark:text-gray-400">
+                                <p className="text-base md:text-lg text-gray-600 dark:text-gray-400">
                                     At ExamAura, we&apos;re committed to providing high-quality, up-to-date practice materials for certification exams. Our mission is to help professionals succeed in their certification journey by offering:
                                 </p>
                                 <ul className="space-y-4 text-gray-600 dark:text-gray-400">
@@ -73,7 +73,7 @@ const About = () => {
                 {/* Why Choose Us Section */}
                 <div className="w-full py-16">
                     <div className="max-w-7xl mx-auto px-4">
-                        <h2 className="text-3xl font-bold text-center text-black dark:text-white mb-12">
+                        <h2 className="text-2xl lg:text-4xl font-bold text-center text-black dark:text-white mb-12">
                             <span>Why Choose </span>
                             <span className='text-black dark:text-white font-semibold'>EXAM</span>
                             <span className='text-[#F59558] font-semibold'>AURA</span>
@@ -88,7 +88,7 @@ const About = () => {
                                     <div className="w-12 h-12 bg-[#F59558]/10 rounded-lg flex items-center justify-center">
                                         <feature.icon className="w-6 h-6 text-[#F59558]" />
                                     </div>
-                                    <h3 className="text-xl font-semibold text-black dark:text-white">
+                                    <h3 className="text-base lg:text-xl font-semibold text-black dark:text-white">
                                         {feature.title}
                                     </h3>
                                     <p className="text-gray-600 dark:text-gray-400">
@@ -104,10 +104,10 @@ const About = () => {
                 <div className="w-full py-16 bg-gray-50 dark:bg-neutral-900">
                     <div className="max-w-7xl mx-auto px-4 text-center">
                         <div className="space-y-6">
-                            <h2 className="text-3xl font-bold text-black dark:text-white">
+                            <h2 className="text-2xl lg:text-4xl font-bold text-black dark:text-white">
                                 Ready to Start Your Certification Journey?
                             </h2>
-                            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                            <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                                 Join thousands of successful professionals who have trusted ExamAura for their exam preparation.
                             </p>
                             <div className="flex justify-center gap-4">

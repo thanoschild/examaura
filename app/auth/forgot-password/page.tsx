@@ -46,10 +46,10 @@ const ForgetPassword = () => {
                     <div className="w-full max-w-md px-4">
                         <div className="p-4 sm:p-7">
                             <div className="text-center mb-8">
-                                <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                                <h1 className="text-xl md:text-2xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-4">
                                     Forgot password?
                                 </h1>
-                                <p className="text-base text-gray-600 dark:text-gray-400">
+                                <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
                                     Remember your password?{" "}
                                     <Link
                                         className="text-black dark:text-white hover:opacity-80 font-semibold"

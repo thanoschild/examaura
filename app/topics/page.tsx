@@ -5,20 +5,18 @@ import Footer from "../components/footer/footer";
 
 const Topics = async () => {
   return (
-    <div className="relative">
+    <div className="min-h-screen flex flex-col">
+      <Header />
       
-      <div className="h-screen flex flex-col">
-        <Header />
-        <div className="flex flex-col items-center justify-center">
+      <main className="flex-grow">
+        <div className="container mx-auto px-4 py-8">
           <div className="flex items-center justify-center">
             <SearchTopic />
           </div>
         </div>
-      </div>
+      </main>
 
-      <div className="relative">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };

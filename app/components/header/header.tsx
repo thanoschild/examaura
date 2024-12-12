@@ -3,10 +3,11 @@ import { signOut, useSession } from "next-auth/react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
-import { FiMoon } from "react-icons/fi";
+import { FiMoon, FiMenu } from "react-icons/fi";
 import { IoSearchSharp } from "react-icons/io5";
 import { MdOutlineShoppingCart, MdOutlineWbSunny } from "react-icons/md";
 import { TbLogout } from "react-icons/tb";
+import { IoMdClose } from "react-icons/io";
 
 const Header = () => {
   const { data: session, status } = useSession();
@@ -14,11 +15,10 @@ const Header = () => {
   const { theme, setTheme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-  // Handle initial mount and system theme
   useEffect(() => {
     setMounted(true);
-    // Set initial theme to system preference
     if (!localStorage.getItem('theme')) {
       setTheme('system');
     }
@@ -30,7 +30,6 @@ const Header = () => {
     setTheme(currentTheme === 'dark' ? 'light' : 'dark');
   };
 
-  // Handle click outside for dropdown
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -67,14 +66,31 @@ const Header = () => {
             </div>
           </Link>
 
-          <Link href="/topics" className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">
-            All Exams
-          </Link>
-          <Link href="/about" className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">About</Link>
-          <Link href="/contact" className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">Contacts</Link>
+          <div className="hidden md:flex items-center gap-x-8">
+            <Link href="/topics" className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">
+              All Exams
+            </Link>
+            <Link href="/about" className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">
+              About
+            </Link>
+            <Link href="/contact" className="hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer">
+              Contacts
+            </Link>
+          </div>
+
+          <button
+            onClick={() => setShowMobileMenu(!showMobileMenu)}
+            className="md:hidden p-2 hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-lg"
+          >
+            {showMobileMenu ? (
+              <IoMdClose className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+            ) : (
+              <FiMenu className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+            )}
+          </button>
         </div>
 
-        <div className="flex items-center gap-x-3 text-gray-600 font-semibold">
+        <div className="hidden md:flex items-center gap-x-3 text-gray-600 font-semibold">
           <Link href="#">
             <button
               onClick={toggleTheme}
@@ -141,6 +157,54 @@ const Header = () => {
           </Link>
         )}
         </div>
+
+        {showMobileMenu && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-black border-b border-gray-200 dark:border-neutral-700 shadow-lg">
+            <div className="flex flex-col p-4 space-y-3">
+              <Link href="/topics" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-2" onClick={() => setShowMobileMenu(false)}>
+                All Exams
+              </Link>
+              <Link href="/about" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-2" onClick={() => setShowMobileMenu(false)}>
+                About
+              </Link>
+              <Link href="/contact" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-2" onClick={() => setShowMobileMenu(false)}>
+                Contacts
+              </Link>
+              
+              <div className="flex items-center gap-3 pt-3 border-t border-gray-200 dark:border-neutral-700">
+                <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-800">
+                  <ThemeIcon className="w-6 h-6 text-gray-700 dark:text-gray-300"/>
+                </button>
+                <Link href="/topics">
+                  <button className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-800">
+                    <IoSearchSharp className="w-6 h-6 text-gray-700 dark:text-gray-300"/>
+                  </button>
+                </Link>
+                <Link href="#">
+                  <button className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-800">
+                    <MdOutlineShoppingCart className="w-5 h-5 text-gray-700 dark:text-gray-300"/>
+                  </button>
+                </Link>
+                {status === "authenticated" ? (
+                  <button
+                    onClick={() => signOut()}
+                    className="ml-auto text-white bg-gray-800 hover:bg-gray-900 px-4 py-2 rounded-lg dark:bg-gray-200 dark:text-black dark:hover:bg-gray-50"
+                  >
+                    Logout
+                  </button>
+                ) : (
+                  <Link
+                    href="/auth/sign-in"
+                    className="ml-auto text-white bg-gray-800 hover:bg-gray-900 px-4 py-2 rounded-lg dark:bg-gray-200 dark:text-black dark:hover:bg-gray-50"
+                    onClick={() => setShowMobileMenu(false)}
+                  >
+                    Login
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );

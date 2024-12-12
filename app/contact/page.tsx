@@ -52,10 +52,10 @@ const Contact = () => {
       <div className="min-h-screen flex-grow flex items-center justify-center bg-white dark:bg-black">
         <div className="w-full max-w-2xl p-8">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+            <h1 className="text-2xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-4">
               We appreciate your feedback!
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-400">
               <span>Thank you for choosing </span>
               <span className='text-black dark:text-white font-semibold'>EXAM</span>
               <span className='text-[#F59558] font-semibold'>AURA</span>
