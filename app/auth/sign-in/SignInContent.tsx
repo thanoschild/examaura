@@ -86,7 +86,7 @@ const Login = () => {
 
   return (
     <div className="relative">
-      <div className="h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col">
         <Header />
         <div className="flex-grow flex items-center justify-center bg-white dark:bg-black">
           <div className="w-full max-w-md mt-7">
