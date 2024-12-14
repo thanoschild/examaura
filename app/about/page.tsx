@@ -13,7 +13,7 @@ const About = () => {
             <Header />
             <main className="bg-white dark:bg-black">
                 {/* Hero Section */}
-                <div className="w-full py-16 md:py-24">
+                <div className="w-full py-8 md:py-16 lg:py-24">
                     <div className="max-w-7xl mx-auto px-4">
                         <div className="text-center space-y-4">
                             <h1 className="text-2xl lg:text-4xl font-bold text-black dark:text-white">
@@ -110,16 +110,16 @@ const About = () => {
                             <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                                 Join thousands of successful professionals who have trusted ExamAura for their exam preparation.
                             </p>
-                            <div className="flex justify-center gap-4">
+                            <div className="flex items-center justify-center gap-4">
                                 <Link
                                     href="/topics"
-                                    className="px-6 py-3 bg-[#F59558] text-white rounded-lg hover:bg-[#F59558]/90 transition-colors duration-200"
+                                    className="text-sm md:text-base px-6 py-3 bg-[#F59558] text-white rounded-lg hover:bg-[#F59558]/90 transition-colors duration-200"
                                 >
                                     Explore Exam Topics
                                 </Link>
                                 <Link
                                     href="/contact"
-                                    className="px-6 py-3 border border-[#F59558] text-[#F59558] rounded-lg hover:bg-[#F59558]/10 transition-colors duration-200"
+                                    className="text-sm md:text-base px-6 py-3 border border-[#F59558] text-[#F59558] rounded-lg hover:bg-[#F59558]/10 transition-colors duration-200"
                                 >
                                     Contact Us
                                 </Link>

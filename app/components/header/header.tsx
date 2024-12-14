@@ -16,6 +16,8 @@ const Header = () => {
   const [mounted, setMounted] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -35,13 +37,23 @@ const Header = () => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setShowDropdown(false);
       }
+
+      if (
+        showMobileMenu &&
+        mobileMenuRef.current &&
+        hamburgerRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node) &&
+        !hamburgerRef.current.contains(event.target as Node)
+      ) {
+        setShowMobileMenu(false);
+      }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [showMobileMenu]);
 
   // Don't render theme toggle until mounted to prevent hydration mismatch
   if (!mounted) {
@@ -79,6 +91,7 @@ const Header = () => {
           </div>
 
           <button
+            ref={hamburgerRef}
             onClick={() => setShowMobileMenu(!showMobileMenu)}
             className="md:hidden p-2 hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-lg"
           >
@@ -159,7 +172,10 @@ const Header = () => {
         </div>
 
         {showMobileMenu && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-black border-b border-gray-200 dark:border-neutral-700 shadow-lg">
+          <div 
+            ref={mobileMenuRef}
+            className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-black border-b border-gray-200 dark:border-neutral-700 shadow-lg"
+          >
             <div className="flex flex-col p-4 space-y-3">
               <Link href="/topics" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white py-2" onClick={() => setShowMobileMenu(false)}>
                 All Exams

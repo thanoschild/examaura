@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const GrowthSection = () => {
   return (
-    <div className="w-full bg-white dark:bg-black py-24 px-4 sm:px-6 lg:px-8">
+    <div className="w-full bg-white dark:bg-black py-6 px-4 lg:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center justify-items-center">
         {/* Text Content */}
         <div className="space-y-6 w-full max-w-2xl lg:max-w-none">
