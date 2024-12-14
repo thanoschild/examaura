@@ -30,7 +30,7 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_SECRET as string
     }),
     CredentialsProvider({
-      name: "Credentails",
+      name: "Credentials",
       credentials: {
         email: {},
         password: {},
@@ -50,6 +50,10 @@ const handler = NextAuth({
 
           if (!user) {
             throw new Error("No user found");
+          }
+
+          if (user.provider !== 'credentials') {
+            throw new Error(`This email is registered with ${user.provider}. Please sign in with ${user.provider}.`);
           }
 
           if (!user.upassword) {
@@ -80,10 +84,9 @@ const handler = NextAuth({
   ],
   callbacks: {
     async signIn({ account, profile }) {
-      // For OAuth providers (GitHub, Google)
       if (account?.provider === 'github' || account?.provider === 'google') {
         if (!profile?.email) {
-          throw new Error("Email is required")
+          return '/auth/sign-in?error=Email is required';
         }
 
         try {
@@ -93,34 +96,25 @@ const handler = NextAuth({
           );
 
           if (existingUser.length === 0) {
-            // If no user exists at all, create new user
             await db.query(
               "INSERT INTO Users (uemail, provider) VALUES (?, ?)",
               [profile.email, account.provider]
             );
+            return true;
           } else {
-            // User exists, check if this provider is already linked
-            const [providerUser] = await db.query<User[]>(
-              "SELECT * FROM Users WHERE uemail = ? AND provider LIKE ?",
-              [profile.email, `%${account.provider}%`]
-            );
-
-            if (providerUser.length === 0) {
-              // Add this provider as another login method
-              await db.query(
-                "UPDATE Users SET provider = CONCAT_WS(',', provider, ?) WHERE uemail = ?",
-                [account.provider, profile.email]
-              );
+            if (existingUser[0].provider !== account.provider) {
+              if (existingUser[0].provider === 'credentials') {
+                return `/auth/sign-in?error=This email is registered with password. Please sign in with your password.`;
+              }
+              return `/auth/sign-in?error=This email is registered with ${existingUser[0].provider}. Please sign in with ${existingUser[0].provider}.`;
             }
+            return true;
           }
-
-          return true;
         } catch (error) {
-          console.error(`Error during ${account.provider} sign in:`, error);
-          return false;
+        console.log("error: ", error);
+          return '/auth/sign-in?error=Authentication failed. Please try again.';
         }
       }
-
       return true;
     },
     async jwt({ token, user }) {
@@ -131,13 +125,18 @@ const handler = NextAuth({
       return token;
     },
     async session({ session, token }) {
-      if (token) {
-        session.user = {
-          email: token.email,
-          image: token.picture,
+      try {
+        if (token) {
+          session.user = {
+            email: token.email,
+            image: token.picture,
+          }
         }
+        return session;
+      } catch (error) {
+        console.log("error: ", error);
+        throw new Error("Session error");
       }
-      return session;
     }
   },
   secret: process.env.NEXTAUTH_SECRET,
